@@ -1,0 +1,57 @@
+/* reset */
+html{color:#333;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Arial,sans-serif}
+body,dd,dl,form,h1,h2,h3,h4,h5,h6,ol,p,td,th,ul{margin:0;padding:0}
+button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline}
+input::-ms-clear,input::-ms-reveal{display:none}
+textarea{overflow:auto}
+table{border-collapse:collapse;border-spacing:0}
+caption,th{text-align:left}
+img{border:0;-ms-interpolation-mode:bicubic}
+ol,ul{list-style:none}
+.clearfix:after,.clearfix:before{content:"";display:table}
+.clearfix:after{clear:both}
+.clearfix{zoom:1}
+
+.sogou-tuijian{ position: absolute; left:0; bottom:0;background: #fff;}
+.sogou-tuijian a{ text-decoration:none}
+.sogou-tuijian .section-s .sec-qy{ width:15px; padding:0 6px; display:inline-block; text-align:center; line-height:16px; color:#79ace9; font-size:13px; padding-top:10px; height:73px; border-right:1px solid #79ace9; border-bottom:1px solid #79ace9; position:absolute; left:0; top:0; background:#fff}
+.sogou-tuijian .section-s .sec-logo,.sogou-tuijian .section-s .sec-close{ width:28px; height:28px; display:block; position:absolute; background:#79ace9 url(/images/btm4/logo_tool.gif) 4px 5px no-repeat; left:0; top:-28px;}
+.sogou-tuijian .section-s .sec-close{background:#79ace9 url(/images/btm4/ico_spy.png) 9px 10px no-repeat;}
+.sogou-tuijian .section-s .sec-qy-box{ padding-left:28px; height:82px; border:1px solid #e4eef9; padding-right:46px}
+.sogou-tuijian .section-s .sec-qy-box ul{ margin:9px 0 0 0px; overflow:hidden; *zoom:1}
+.sogou-tuijian .section-s .sec-qy-box li{ margin-left:5px; float:left; _display:inline}
+.sogou-tuijian .section-s .sec-qy-box li a{ display:block; position:relative; font-size:13px; color:#fff; text-decoration:none; text-align:center; border:1px solid #ebebeb;}
+.sogou-tuijian .section-s .sec-qy-box li img{ vertical-align:top}
+.sogou-tuijian .section-s .sec-qy-box .s1{ height:16px; width:100%; left:0; bottom:0; position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5; background:#000;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.sogou-tuijian .section-s .sec-qy-box .s2{ height:16px;line-height:16px; width:100%; position:absolute; left:0; bottom:0; z-index:5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;  }
+
+.sogou-tuijian .turn-left,.sogou-tuijian .turn-right{ width:18px; height:26px; display:block; position:absolute; right:15px; top:50%; margin-top:-13px; background:url(/images/btm4/ico_spy.png) 6px -12px no-repeat}
+.sogou-tuijian .turn-right:hover{background:url(/images/btm4/ico_spy.png) 6px -38px no-repeat}
+.sogou-tuijian .turn-left{background:url(/images/btm4/ico_spy.png) -31px -12px no-repeat; right:auto; left:10px}
+.sogou-tuijian .turn-left:hover{background:url(/images/btm4/ico_spy.png) -31px -38px no-repeat}
+.sogou-tuijian .sec-close2{ background:url(/images/btm4/ico_spy.png) 0 -72px no-repeat; width:28px; height:28px; display:block; position:absolute; right:28px; top:50%; margin-top:-14px}
+.sogou-tuijian .section-l .sec-logo{ width:50px; height:46px; display:block; position:absolute; left:0; top:0; background:#96beed url(/images/btm4/logo_tool2.gif) 10px 7px no-repeat;}
+.sogou-tuijian .section-l .sec-qy-box{height:44px; border:1px solid #e4eef9; padding-left:50px; padding-right:124px}
+.sogou-tuijian .section-l .sec-qy-box li{ float:left; margin-right:10px;}
+.sogou-tuijian .section-l .sec-qy-box li a{ color:#094eaa; padding:0 16px; background:#ebf3fb;-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; display: inline-block}
+.sogou-tuijian .section-l .sec-qy-box li a:hover{ text-decoration: underline; color:#f5835c}
+.sogou-tuijian .section-l .turn-left{ left:65px}
+.sogou-tuijian .section-l .turn-right{ right:102px}
+.sogou-tuijian .section-l2 .sec-logo{ width:101px; height:84px;display:block; position:absolute; left:0; top:0; background:#96beed url(/images/btm4/logo_tool3.gif) 10px 23px no-repeat;}
+.sogou-tuijian .section-l2 .sec-qy-box{ padding-left:101px; padding-right:105px;border:1px solid #e4eef9; height:82px}
+.sogou-tuijian .section-l2 .sec-qy-box ul{ overflow:hidden; *zoom:1; height:65px;}
+.sogou-tuijian .section-l2 .sec-qy-box li{ float:left; margin-right:30px; margin-bottom:5px}
+.sogou-tuijian .section-l2 .sec-qy-box li a{ display:block; position:relative; width: 88px; height: 62px; font-size:13px; color:#fff; text-decoration:none; text-align:center; border:1px solid #ebebeb;}
+.sogou-tuijian .section-l2 .sec-qy-box li img{ vertical-align:top}
+.sogou-tuijian .section-l2 .sec-qy-box .s1{ height:16px; width:100%; left:0; bottom:0; position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5; background:#000}
+.sogou-tuijian .section-l2 .sec-qy-box .s2{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;word-wrap:normal; line-height:16px; width:100%; position:absolute; left:0; bottom:0; z-index:5}
+.sogou-tuijian .section-l2 .turn-left{ left:116px}
+.sogou-tuijian .section-l2 .turn-right{ right:82px}
+.sogou-tuijian .section-l2 .sec-qy-box li.cur img{ border:2px solid #79ace9; margin:-2px; position:relative;-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+.sogou-tuijian.no-logo .section-s .sec-logo{ background:url(/images/btm4/logo_tool4.gif) 0 0 no-repeat}
+.sogou-tuijian.no-logo .section-l .sec-logo{background:url(/images/btm4/logo_tool5.gif) 0 0 no-repeat}
+.sogou-tuijian.no-logo .section-l2 .sec-logo{background:#96beed url(/images/btm4/logo_tool6.gif) center center no-repeat}
+
+.sogou-tuijian .section-l .sec-qy-box ul, .sogou-tuijian .section-l2 .sec-qy-box ul{position: absolute;left:0;}
+.sogou-tuijian .section-l .sec-qy-box .content-box{ overflow:hidden; height:26px; line-height:26px; font-size:14px; margin:9px 0 0 37px; *zoom:1;}
+.sogou-tuijian .section-l2 .sec-qy-box .content-box{ overflow:hidden; height:74px; margin:9px 0 0 46px; *zoom:1;}

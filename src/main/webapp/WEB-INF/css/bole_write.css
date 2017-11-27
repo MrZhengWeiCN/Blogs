@@ -1,0 +1,39 @@
+/*²®ÀÖµãÆÀ°´Å¥*/
+.send_bt{position: relative;width: 96px;height: 30px;border-radius: 3px;background-color: #185CA3;cursor: pointer;font-size: 12px;color:#fff ;display: inline-block;
+	text-align: center;
+	line-height: 30px;
+	font-weight: bold;}
+.send_bt:hover{background-color: #0C306E; }
+.send_bt:hover  .send_bt_list{display: block }
+.send_bt .send_bt_arrow{
+	border-top: 6px solid #fff;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 0;
+	vertical-align: -13px;
+	margin-left: 4px;
+}
+.send_bt .send_bt_list{width: 96px;height:70px;position: absolute;left: 0; bottom: -70px;padding: 0;margin: 0;background: rgba(234,234,234,1);color: #656565;
+	font-size: 12px;
+	font-weight: normal;
+	display: none}
+.send_bt .send_bt_list .send_bt_list_first{cursor: pointer;height: 35px;line-height: 35px}
+.send_bt .send_bt_list .send_bt_list_second{cursor: pointer;;height: 35px;line-height: 35px}
+.send_bt .send_bt_list .send_bt_list_second .bole_wenhao{cursor: pointer;}
+/*²®ÀÖµãÆÀµ¯³öµÄ°ïÖú*/
+.mod_pop_bole_help{position: absolute;width: 667px;aheight: 368px;color: #656565;font-size: 14px;background-color: #fff;border: 1px solid #f0f0f0;display: none;margin-left: -334px;z-index: 999}
+.mod_pop_bole_help .mod_pop_bole_help_title{height: 50px;line-height: 50px;font-size: 18px;border-bottom: 1px solid #f0f0f0;text-indent: 20px;}
+.mod_pop_bole_help .mod_pop_bole_help_title span {background: url("images/bole_help_close.png");display: inline-block;width:12px;height: 11px ;float: right;margin-top: 10px;margin-right: 20px}
+.mod_pop_bole_help .mod_pop_bole_help_content {padding: 20px;line-height: 24px}
+.mod_pop_bole_help .mod_pop_bole_help_footer	{height: 50px;line-height: 50px;font-size: 18px;border-top: 1px solid #f0f0f0;}
+.mod_pop_bole_help .mod_pop_bole_help_footer span{display: inline-block;width: 80px;height: 28px;line-height:28px;color: #fff;text-align: center;float: right;font-size: 14px;background: #BE0000;margin-right: 20px;margin-top: 12px;cursor: pointer}
+
+ .marker{position: absolute;
+background: #000;
+width: 0;
+height: 0;
+top: 0;
+left: 0;
+z-index: 900;
+opacity: 0;
+transition: all 0.5s ease-in;}

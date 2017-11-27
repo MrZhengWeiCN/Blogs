@@ -1,0 +1,203 @@
+<p>最近看了《图解HTTP》，遂做一些笔记。</p>
+
+<hr>
+
+<p>HTTP是客户端浏览器或其他程序与Web服务器之间的<strong>应用层</strong>通信协议。 <br>
+特点：</p>
+
+<ul>
+<li>通过请求和响应的交换达成通信</li>
+<li>HTTP 是不保存状态的协议</li>
+<li>HTTP 协议使用 URI 定位互联网上的资源</li>
+<li>持久连接，不需要等待就能直接发送下一个响应</li>
+<li>使用 Cookie 管理状态</li>
+</ul>
+
+<hr>
+
+
+
+<h2 id="http请求报文">HTTP请求报文</h2>
+
+<p>用于 HTTP 协议交互的<strong>信息</strong>被称为 HTTP 报文。请求端的HTTP 报文叫做<strong>请求报文</strong>，响应端的叫做<strong>响应报文</strong>。 <br>
+报文的结构如下：</p>
+
+<p><img src="http://img.blog.csdn.net/20171101205639477?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<ul>
+<li>报文首部：服务端或客户端的响应或请求的内容和属性。</li>
+<li>报文主体：应该发送的数据。</li>
+</ul>
+
+<p>请求报文和响应报文之间略有不同（上：请求报文；下：响应报文）： <br>
+<img src="http://img.blog.csdn.net/20171101210009648?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<p><strong>报文首部</strong>又可以分为：</p>
+
+<ul>
+<li><p><strong>请求行</strong>：包含用于<strong>请求的方法</strong>，请求 URI 和 HTTP 版本。</p></li>
+<li><p><strong>状态行</strong>：包含表明<strong>响应结果的状态码</strong>，原因短语和 HTTP 版本。</p></li>
+<li><p><strong>首部字段</strong>：包含表示请求和响应的<strong>各种条件和属性</strong>的各类首部。一般有 4 种首部，分别是：通用首部、请求首部、响应首部和实体首部。</p></li>
+</ul>
+
+<p>具体的报文结构如下，上图为请求报文，下图为响应报文： <br>
+<img src="http://img.blog.csdn.net/20171101210521344?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<hr>
+
+
+
+<h2 id="http-状态码">HTTP 状态码</h2>
+
+<p>响应报文中状态行中的状态码用来表示客户端 HTTP 请求的返回结果、标记服务器端的处理<strong>是否正常</strong>、<strong>通知出现的错误</strong>等工作。一句话：状态码告知从<strong>服务器端返回的请求结果</strong>。</p>
+
+<p>状态码以 3 位数字和原因短语组成，如上图中的200 OK。 <br>
+状态码的类别如下： <br>
+<img src="http://img.blog.csdn.net/20171101211622433?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<ul>
+<li><p><strong>2XX</strong>:响应结果表明请求被正常处理了。204 No Content表示请求正常处理，但是没有响应的资源；206 Partial Content 表示请求正常处理，但是响应一部分资源。</p></li>
+<li><p><strong>3XX</strong>:响应结果表明浏览器需要执行某些特殊的处理以正确处理请 <br>
+求,也就是常说的重定向。301 Moved Permanently，表示请求的资源已<strong>永久</strong>被分配了新的 URI；302 Found表示请求的资源<strong>暂时</strong>被分配了新的 URI。</p></li>
+<li><p><strong>4XX</strong>：响应结果表明<strong>客户端发生了错误</strong>。400 Bad Request码表示请求报文中存在语法错误；403 Forbidden表明对请求资源的访问被服务器拒绝了；我们最常见的<strong>404 Not Found</strong>，表明服务器上无法找到请求的资源。</p></li>
+<li><p><strong>5XX</strong>：响应结果表明<strong>服务器本身发生错误</strong>。500 Internal Server Error表明服务器端在执行请求时发生了错误；503 Service Unavailable表明服务器暂时处于超负载或正在进行停机维护，现在无法 <br>
+处理请求。</p></li>
+</ul>
+
+<hr>
+
+
+
+<h2 id="http-首部">HTTP 首部</h2>
+
+<p>从上面文章我们知道，HTTP 协议的请求和响应报文中必定包含 HTTP 首部，首部内容为客户端和服务器分别处理请求和响应<strong>提供所需要的信息</strong>。</p>
+
+<p>HTTP 首部字段是由首部字段名和字段值构成的，中间用冒号“:” 分 <br>
+隔，例如：<strong>Content-Type: text/html</strong>。 <br>
+HTTP 首部字段根据实际用途被分为以下 4 种类型：</p>
+
+<ul>
+<li><strong>通用首部字段</strong></li>
+<li><strong>请求首部字段</strong></li>
+<li><strong>响应首部字段</strong></li>
+<li><strong>实体首部字段</strong></li>
+</ul>
+
+<p>HTTP/1.1 规范定义了如下 47 种首部字段。</p>
+
+<ul>
+<li>通用首部字段：</li>
+</ul>
+
+<p><img src="http://img.blog.csdn.net/20171101214316664?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<ul>
+<li>请求首部字段：</li>
+</ul>
+
+<p><img src="http://img.blog.csdn.net/20171101214726401?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<ul>
+<li>响应首部字段：</li>
+</ul>
+
+<p><img src="http://img.blog.csdn.net/20171101214820609?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<ul>
+<li>实体首部字段：</li>
+</ul>
+
+<p><img src="http://img.blog.csdn.net/20171101214944197?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+
+
+<h2 id="为-cookie-服务的首部字段"><strong>为 Cookie 服务的首部字段</strong></h2>
+
+<p>虽然HTTP 是不保存状态的协议，但是通过Cookie可以记录客户端和服务端之间通信的状态。 <br>
+原理：用户的状态会通过 <strong>Web 浏览器，把一些数据临时写入用户的计算机内</strong>。接着当用户访问该Web网站时，可通过通信方式<strong>取回之前发放的Cookie</strong>。</p>
+
+<p>为 Cookie 服务的首部字段如下：</p>
+
+<p><img src="http://img.blog.csdn.net/20171101215623947?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<ul>
+<li><strong>Set-Cookie</strong>：服务器准备开始管理客户端的状态时，会事先告给客户端知各种信息。如：</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs sql"><span class="hljs-operator"><span class="hljs-keyword">Set</span>-Cookie: name=<span class="hljs-keyword">value</span>;</span> expires=Tue, 05 Jul 2011 07:26:31</code></pre>
+
+<p>各个字段具体含义如下： <br>
+<img src="http://img.blog.csdn.net/20171101215859496?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<ul>
+<li><strong>Cookie</strong>：首部字段 Cookie 会<strong>告知服务器</strong>，请求中包含从服务器接收到的 Cookie。例如：  Cookie: status=enable。</li>
+</ul>
+
+<p><strong>ps：所有图片来源于《图解HTTP》。</strong></p>
+
+<hr>
+
+
+
+<h2 id="https">HTTPS</h2>
+
+<p>在讲HTTPS之前 我们需要知道，在 HTTP 协议中有可能存在信息窃听或身份伪装等安全问题，具体如下：</p>
+
+<ul>
+<li>通信使用明文（不加密），内容可能会被窃听</li>
+<li>不验证通信方的身份，因此有可能遭遇伪装</li>
+<li>无法证明报文的完整性，所以有可能已遭篡改</li>
+</ul>
+
+<p><strong>通信使用明文（不加密），内容可能会被窃听</strong>：首先TCP/IP 是可能被窃听的网络，互联网中的所有数据都不是个人私有的，所以不排除某个环节中会遭到恶意窥视行为。其次，如果内容不加密，那么信息就会被其他恶意对象很容易的捕获，我们可以通过SSL和TLS的组合将HTTP通信加密。</p>
+
+<p><strong>不验证通信方的身份就可能遭遇伪装</strong>：在 HTTP 协议通信时，由于不存在确认通信方的处理步骤，任何人都可以发起请求。另外，服务器只要接收到请求，不管对方是谁都会返回一个响应，这就会存在各种隐患，就好像你不知对方是谁，就把自己的银行账户密码传递给对方了。解决办法就是取得对方的身份以后再通信，而SSL不仅提供加密处理，而且还使用了一种被称为证书的手段，可用于确定方（证书由值得信任的第三方机构颁发，用以证明服务器和客户端是实际存在的）。</p>
+
+<p><strong>无法证明报文的完整性，所以有可能已遭篡改</strong>：HTTP 协议无法证明通信的报文完整性，因此，在请求或响应送出之后直到对方接收之前的这段时间内，即使请求或响应的内容遭到篡改，也没有办法获悉。换句话说，没有任何办法确认，发出的请求 / 响应和接收到的请求 / 响应是前后相同的。解决办法是：使用MD5 和 SHA-1 等散列值校验的方法，以及用来确认文件的数字签名方法来确保报文的完整性。</p>
+
+<p>知道了HTTP的不安全的缺点之后，就可以介绍HTTPS了。 <br>
+<strong>HTTPS=HTTP+ 加密 + 认证 + 完整性保护</strong>，也就是HTTPS是安全的HTTP，<strong>HTTPS 并非是应用层的一种新协议</strong>，它只是 HTTP 通信接口部分用SSL和 TLS协议代替而已。</p>
+
+<p>HTTP 直接和 TCP 通信。当使用 SSL时，则演变成先和 SSL通信，再由 SSL和 TCP 通信了。简言之，所谓 HTTPS，其实就是<strong>身披SSL协议这层外壳的 HTTP</strong>。</p>
+
+<p><img src="http://img.blog.csdn.net/20171101223007415?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<p>采用 SSL后，HTTP 就拥有了 HTTPS 的加密、证书和完整性保护这些功能。此时的HTTP才是安全可靠的。</p>
+
+<hr>
+
+<h2 id="https通信过程">HTTPS通信过程</h2>
+
+<p>与HTTP的通信不同，HTTPS的通信过程更加复杂。 <br>
+<img src="http://img.blog.csdn.net/20171102102003897?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzcxNjk4MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述" title=""></p>
+
+<ol>
+<li>客户端通过发送 Client Hello 报文开始 SSL通信，报文里面含有客户端SSL支持的信息。</li>
+<li>服务器可进行 SSL通信时，会以 Server Hello 报文作为应答。告诉客户端服务端支持的SSL。</li>
+<li>之后服务器发送 Certificate 报文。报文中包含公开密钥证书。</li>
+<li>服务器发送 Server Hello Done 报文通知客户端，表示最初的SSL通信结束。</li>
+<li>客户端以 Client Key Exchange 报文作为回应。报文中包含通信加密中使用的一种被称为 Pre-mastersecret 的随机密码串。</li>
+<li>接着客户端继续发送 Change Cipher Spec 报文，告诉服务端以后的通信会采用 Pre-master secret 密钥加密。</li>
+<li>客户端发送 Finished 报文。该报文包含连接至今全部报文的整体校验值。</li>
+<li>服务端发送Change Cipher Spec报文</li>
+<li>服务端发送Finished报文。</li>
+<li>SSL连接建立，开始HTTP的通信。</li>
+</ol>
+
+<p>总结上面的过程： <br>
+1.客户端发起https请求，请求里面包含了客服端的SSL信息。 <br>
+2.服务端接收请求以后，选择合适的加密协议，并且返回给客户端自己的安全证书和公开密钥。 <br>
+3.客户端解析服务端的安全证书，如果证书有效，则告诉服务端传输的信息将以某种方式加密。 <br>
+4.服务端用私有密钥解密数据，返回使用公共加密的数据给客户端。 <br>
+5.客户端使用公共密钥解密数据。 <br>
+6.SSL通信建立。</p>
+
+<p><strong>你必须知道的</strong>： <br>
+HTTP是应用层上的协议。 <br>
+HTTP之间通过HTTP报文通信，HTTP响应和请求的报文结构略有不同。 <br>
+响应报文的状态码有哪些？ <br>
+常见的HTTP首部有哪些？ <br>
+HTTPS是什么？它是如何实现的？ <br>
+HTTPS的通信过程？</p>
